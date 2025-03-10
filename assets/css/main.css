@@ -636,6 +636,15 @@ input, select, textarea {
 			font-family: 'Font Awesome 5 Brands';
 		}
 
+		.peach-icon {
+			display: inline-block;
+			width: 2.5rem;   /* Adjust size as needed */
+			height: 2.5rem;
+			background: url("../../images/peach.png") no-repeat center center;
+			background-size: contain; /* Keeps the image proportionate */
+
+		  }
+
 /* Image */
 
 	.image {
@@ -1298,10 +1307,14 @@ input, select, textarea {
 			line-height: 5.5rem;
 			border: solid 1px #ffffff;
 			border-radius: 100%;
+			display: flex;
+			align-items: center;   /* Vertically center */
+			justify-content: center; /* Horizontally center */
+			
 		}
 
 			#header .logo .icon:before {
-				font-size: 2rem;
+				font-size: 2rem;				
 			}
 
 		#header .content {
