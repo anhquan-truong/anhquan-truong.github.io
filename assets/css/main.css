@@ -1546,6 +1546,7 @@ input, select, textarea {
 		position: relative;
 		max-width: 100%;
 		z-index: 3;
+		
 	}
 
 		#main article {
@@ -1614,7 +1615,7 @@ input, select, textarea {
 					background-color: rgba(255, 255, 255, 0.175);
 				}
 
-		@media screen and (max-width: 736px) {
+			@media screen and (max-width: 736px) {
 
 			#main article {
 				padding: 3.5rem 2rem 0.5rem 2rem ;
@@ -1675,3 +1676,49 @@ input, select, textarea {
 			opacity: 0;
 		}
 
+/* Basic gallery layout (row of images, centered) */
+#intro.intro-hero .gallery {
+	display: flex;
+	justify-content: center;
+	gap: 1.2rem; /* space between images */
+	margin-top: 2rem;
+	margin: 0 -5rem;          /* Negative margin to "spill" beyond the box */ 
+	
+  }
+  
+  /* Base image style */
+  	#intro.intro-hero .gallery img {
+  	/* Key: "flex: 1 1 0" plus no fixed width
+     => images distribute available space and shrink if needed */
+		flex: 1 1 230px;
+		min-width: 120px; /* Upper bound on larger screens */
+		aspect-ratio: 4 / 5;
+		object-fit: cover;
+		border-radius: 12px;
+		transition: transform 0.3s ease-in-out;
+  	}
+
+  
+  	/* Give each image a different tilt */
+  	#intro.intro-hero .gallery img:nth-child(1) {
+		transform: rotate(-3deg);
+ 	}
+  	#intro.intro-hero .gallery img:nth-child(2) {
+		transform: rotate(3deg);
+  	}
+  	#intro.intro-hero .gallery img:nth-child(3) {
+		transform: rotate(-3deg);
+  	}
+  	#intro.intro-hero .gallery img:nth-child(4) {
+		transform: rotate(3deg);
+  	}
+  	#intro.intro-hero .gallery img:nth-child(5) {
+		transform: rotate(-3deg);
+  	}
+  
+  	/* Optional: On hover, add a slight scale while keeping the tilt */
+  	#intro.intro-hero .gallery img:hover {
+		transform: scale(1.05) rotate(0deg);
+		/* or keep each child’s tilt by repeating the rotate(...) 
+	   	in each nth-child hover rule if you want them to remain tilted on hover. */
+  	}
